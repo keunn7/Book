@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.goodee.book.BookMapper">
+  <select id ="selectBookList" resultType="com.goodee.book.model.BookVo" >
+  	SELECT * FROM content_list
+  </select>
+  <insert id ="insertBook" parameterType="com.goodee.book.model.BookVo">
+ 	 INSERT INTO content_list(g_writer, g_content, g_reg_date)
+ 	 VALUES (#{g_writer}, #{g_content}, NOW())
+ 	
+  </insert>
+</mapper>
